@@ -1,4 +1,0 @@
-title = "TM-bench config file"
-
-[transaction]
-size = 10000
