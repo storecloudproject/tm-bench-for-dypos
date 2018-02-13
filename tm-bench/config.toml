@@ -1,8 +1,0 @@
-title = "TM-bench config file"
-
-[transaction]
-size = 10000
-
-[random]
-randomfromsize=100
-randomtosize=10000
