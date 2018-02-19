@@ -1,6 +1,6 @@
 # Load Test of TM-Bench  - Test 1 (test-fixed-tx-size)
 
-*Scope of Test 1* 
+**Scope of Test 1** 
 
 The purpose of this test is to evaluate the “consensus efficiency” of Storecoin DyPoS (https://storeco.in/) engine with fixed transaction sizes. Consensus efficiency is the rate at which the participating validator nodes agree on the new block. It is measured as transactions per second processed and added to the blocks. This test doesn’t include validating the transactions, executing the transactions after they are added to the block, etc., but attempts to measure raw performance of the consensus engine.
  
