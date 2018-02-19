@@ -74,11 +74,11 @@ See here : https://github.com/StorecoinProject/tm-bench-latest/blob/master/tests
 
 **Results Summary**
 
-1: Consensus efficiency is directly proportional to the transaction volume. The transaction volume is (transaction size * number of        transactions). 
+- Consensus efficiency is directly proportional to the transaction volume. The transaction volume is (transaction size * number of         transactions). 
 
-2: At smaller transaction sizes (see the results for 100 and 500 byte transactions) tests passed for higher input transaction rates, but    as the transaction sizes increases, the test failed for higher rates. The failures here result in rejected transactions.
+- At smaller transaction sizes (see the results for 100 and 500 byte transactions) tests passed for higher input transaction rates, but   as the transaction sizes increases, the test failed for higher rates. The failures here result in rejected transactions.
 
-3: The validator nodes remained stable even at failure levels above. See the transaction logs for details.
+- The validator nodes remained stable even at failure levels above. See the transaction logs for details.
 
 **What’s Next?**
 
@@ -95,7 +95,7 @@ See here : https://github.com/StorecoinProject/tm-bench-latest/blob/master/tests
 
 - Test 7 (test-21-node-burst-mode-real-tx) uses real transactions which need to be validated before they are included in the block. The   purpose of this test is to measure the throughput with transaction overheads included in the throughput numbers.
 
-- The dates for tests 3 to 7 will be published as we make progress.
+The dates for tests 3 to 7 will be published as we make progress.
 
 
 
