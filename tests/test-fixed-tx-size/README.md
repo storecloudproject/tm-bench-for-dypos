@@ -5,10 +5,12 @@
 The purpose of this test is to evaluate the “consensus efficiency” of Storecoin DyPoS (https://storeco.in/) engine with fixed transaction sizes. Consensus efficiency is the rate at which the participating validator nodes agree on the new block. It is measured as transactions per second processed and added to the blocks. This test doesn’t include validating the transactions, executing the transactions after they are added to the block, etc., but attempts to measure raw performance of the consensus engine.
  
 Storecoin DyPoS is built on top of Tendermint (https://tendermint.com/). In this test, its benchmarking tool, TM-Bench, is customized to provide the necessary setup described below.
-Test Setup 
+
+**Test Setup** 
  
 TM-Bench  is customized to generate transactions of fixed size (in bytes). The number of clients (“c” = 4) is set to be same as the number of validator nodes (“N” = 4). Each client generates transactions of specified size and sends them to the configured validator node. All the 4 validator nodes receive transactions concurrently and the elected proposer node proposes the new blocks with transactions received by all the validators.  The tests are run with fixed transaction sizes of 100, 500, 1K, 5K and 10K bytes for a duration (“T” = 5) of 5 seconds. The transaction rate ("r") will be 500, 1000, 2000, 5000, and 10000.
-Environment and Tools
+
+**Environment and Tools**
  
 A cluster containing 4 validator nodes is set up on an Amazon Web Services (AWS) Elastic Compute Cloud (EC2). Each validator node runs on r3.xlarge instance with 4 CPUs, 30.5GB memory, and 80GB SSD drive. The nodes are located in the following regions.
  
