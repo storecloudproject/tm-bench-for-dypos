@@ -36,6 +36,9 @@ C4 sends r transactions of fixed size s to N4 for the duration T.
 
 5 different transaction sizes are used and for each transaction size 5 tests are performed, resulting in a total of 25 tests. Some tests, at higher transaction size and/or rate, failed due to timeouts resulting from excessive load on the system.
 
+
+
+
 Transaction Size
 Time (T)
 Transactions (r)
