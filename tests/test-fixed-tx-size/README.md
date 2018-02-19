@@ -22,13 +22,18 @@ Oregon
 The transactions are generated from clients running on an m4.2xlarge instance located in Canada.
  
 The 4 validator nodes are geographically spread across the United States and the clients are configured in a 5th region in order to simulate real world setup.
-Running the Test
+
+
+**Running the Test**
 
 C1 sends r transactions of fixed size s to N1 for the duration T. 
 C2 sends r transactions of fixed size s to N2 for the duration T. 
 C3 sends r transactions of fixed size s to N3 for the duration T. 
 C4 sends r transactions of fixed size s to N4 for the duration T.
-Test Summary 
+
+
+**Test Summary**
+
 5 different transaction sizes are used and for each transaction size 5 tests are performed, resulting in a total of 25 tests. Some tests, at higher transaction size and/or rate, failed due to timeouts resulting from excessive load on the system.
 
 Transaction Size
