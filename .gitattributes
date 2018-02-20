@@ -1,1 +1,2 @@
 	tests/test-fixed-tx-size/tm-bench/vendor/* linguist-vendored
+	*.py linguist-language=Go
