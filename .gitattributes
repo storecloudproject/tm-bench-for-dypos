@@ -1,2 +1,2 @@
-tests/test-fixed-tx-size/tm-bench/* linguist-vendored
-*.rb linguist-language=Go
+mvnw.cmd linguist-generated=true
+mvnw linguist-generated=true
