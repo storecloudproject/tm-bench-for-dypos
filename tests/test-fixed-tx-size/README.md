@@ -1,4 +1,4 @@
-# Load Test of TM-Bench  - Test 1 (test-fixed-tx-size)
+# Consensus Efficiency of Storecoin DyPoS - Test 1 (test-fixed-tx-size)
 
 **Scope of Test 1** 
 
