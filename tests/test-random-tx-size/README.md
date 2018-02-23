@@ -1,12 +1,12 @@
 # Consensus Efficiency of Storecoin DyPoS - Test 1 (test-random-tx-size)
 
-**Scope of Test 1 **
+**Scope of Test 1**
 
 The purpose of this test is to evaluate the “consensus efficiency” of Storecoin DyPoS (https://storeco.in/) engine with random,transaction sizes. Consensus efficiency is the rate at which the participating validator nodes agree on the new block. It is measured as transactions per second processed and added to the blocks. This test doesn’t include validating the transactions, executing the transactions after they are added to the block, etc., but attempts to measure raw performance of the consensus engine.
  
 Storecoin DyPoS is built on top of Tendermint (https://tendermint.com/). In this test, its benchmarking tool, TM-Bench, is customized to provide the necessary setup described below.
 
-**Test Setup **
+**Test Setup**
  
  
 Tm-bench is customized where the transaction sizes are randomly computed subjected to the maximum size. The test setup will be same as Phase 1, except that the transaction sizes are randomized.  
@@ -34,7 +34,7 @@ C2 sends r transactions of random size s to N2 for the duration T.
 C3 sends r transactions of random size s to N3 for the duration T. 
 C4 sends r transactions of random size s to N4 for the duration T.
 
-**Test Summary **
+**Test Summary**
 
 5 different transaction sizes are used and for each transaction size 5 tests are performed, resulting in a total of 25 tests. Some tests, at higher rate, failed due to timeouts resulting from excessive load on the system.
 
@@ -42,7 +42,7 @@ Time (T)
 Transactions (r)
 Connections (c)
 
-**Test Results **
+**Test Results**
 
 In the following test results, “Blocks/sec” indicates the number of blocks added to the blockchain per second and “Txs/sec” indicates the consensus efficiency. “Txs/sec” is the rate at which the transactions are processed and included in the blocks. 
 
