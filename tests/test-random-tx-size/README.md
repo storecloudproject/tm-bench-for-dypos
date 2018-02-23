@@ -19,10 +19,10 @@ Transaction Size (100 byte to 10k byte)
 A cluster containing 4 validator nodes is set up on an Amazon Web Services (AWS) Elastic Compute Cloud (EC2). Each validator node runs on r3.xlarge instance with 4 CPUs, 30.5GB memory, and 80GB SSD drive. The nodes are located in the following regions.
  
 Nodes :  r3.xlarge instances
-California 
-Virginia
-Ohio  
-Oregon 
+- California 
+- Virginia
+- Ohio  
+- Oregon 
 The transactions are generated from clients running on an m4.2xlarge instance located in Canada.
  
 The 4 validator nodes are geographically spread across the United States and the clients are configured in a 5th region in order to simulate real world setup.
@@ -38,9 +38,7 @@ C4 sends r transactions of random size s to N4 for the duration T.
 
 5 different transaction sizes are used and for each transaction size 5 tests are performed, resulting in a total of 25 tests. Some tests, at higher rate, failed due to timeouts resulting from excessive load on the system.
 
-Time (T)
-Transactions (r)
-Connections (c)
+See here : https://github.com/StorecoinProject/tm-bench/blob/master/tests/test-random-tx-size/images/Transaction-random-test-summary.png
 
 **Test Results**
 
@@ -50,33 +48,22 @@ In the following test results, “Blocks/sec” indicates the number of blocks a
 
 Test Tx-Random
 
-Test for Transaction Size : Random
-Connections : 4
-Rate : 500. 1000,2000,5000,10000
-Time : 5 Sec
-
-
-
-Transaction Size 5000 Byte
-Transactions
-Stats
-Avg
-Stdev
-Max
+See here: https://github.com/StorecoinProject/tm-bench/blob/master/tests/test-random-tx-size/images/Transaction-random-test-result.png
 
 **Results Summary**
 
-Consensus efficiency is directly proportional to the transaction volume. The transaction volume is (transaction size * number of transactions). 
-At smaller transaction sizes (see the results for 100 and 500 byte transactions) tests passed for higher input transaction rates, but as the transaction sizes increases, the test failed for higher rates. The failures here result in rejected transactions.
-The validator nodes remained stable even at failure levels above. See the transaction logs for details.
+- Consensus efficiency is directly proportional to the transaction volume. The transaction volume is (transaction size * number of         transactions). 
+- At smaller transaction sizes (see the results for 100 and 500 byte transactions) tests passed for higher input transaction rates, but   as the transaction sizes increases, the test failed for higher rates. The failures here result in rejected transactions.
+- The validator nodes remained stable even at failure levels above. See the transaction logs for details.
 
 **What’s Next?**
 
-Test 3 (test-random-distributed-tx-size) is a special case of Test 2 where the transaction sizes are distributed based on a % distribution. For example, 60% of the transactions are 500 bytes or less, 20% of the transactions are 500 to 2,000 bytes in length, 10%, 2,000 to 5,000 bytes in length, and another 10%, 5,000 to 10,000 bytes in length. Within each threshold, the transaction sizes are randomized. This test serves as a basis for rest of the tests discussed below.
-Test 4 (test-8-node-random-distributed-tx-size) uses 8 validator nodes with 4 and 8 clients sending transactions as described in Test 3. The purpose of this test is to measure the consensus efficiency with a larger set of validator nodes.
-Test 5 (test-8-node-burst-mode-random-distributed-tx-size) uses the same setup as Test 4, but the clients send transactions in bursts to the validator nodes. Each test is run for 10 minutes with clients sending predetermined number of transactions in short bursts. The purpose of this test is to observe consensus efficiency over a longer duration and to evaluate if burst mode results in better throughput.
-Test 6 (test-21-node-burst-mode-random-distributed-tx-size) extends test 5 to 21 validator nodes.
-Test 7 (test-21-node-burst-mode-real-tx) uses real transactions which need to be validated before they are included in the block. The purpose of this test is to measure the throughput with transaction overheads included in the throughput numbers.
+- Test 3 (test-random-distributed-tx-size) is a special case of Test 2 where the transaction sizes are distributed based on a %           distribution. For example, 60% of the transactions are 500 bytes or less, 20% of the transactions are 500 to 2,000 bytes in length,     10%, 2,000 to 5,000 bytes in length, and another 10%, 5,000 to 10,000 bytes in length. Within each threshold, the transaction size are   randomized. This test serves as a basis for rest of the tests discussed below.
+
+- Test 4 (test-8-node-random-distributed-tx-size) uses 8 validator nodes with 4 and 8 clients sending transactions as described in Test 3. The purpose of this test is to measure the consensus efficiency with a larger set of validator nodes.
+- Test 5 (test-8-node-burst-mode-random-distributed-tx-size) uses the same setup as Test 4, but the clients send transactions in bursts to the validator nodes. Each test is run for 10 minutes with clients sending predetermined number of transactions in short bursts. The purpose of this test is to observe consensus efficiency over a longer duration and to evaluate if burst mode results in better throughput.
+- Test 6 (test-21-node-burst-mode-random-distributed-tx-size) extends test 5 to 21 validator nodes.
+- Test 7 (test-21-node-burst-mode-real-tx) uses real transactions which need to be validated before they are included in the block. The purpose of this test is to measure the throughput with transaction overheads included in the throughput numbers.
 
 The dates for tests 3 to 7 will be published as we make progress.
 
