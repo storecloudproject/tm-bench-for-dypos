@@ -1,29 +1,8 @@
 title = "TM-bench config file"
 
 [transaction]
-size = 100
+size = 10000
 
 [random]
 randomfromsize=100
 randomtosize=10000
-
-[[percentrandom]]
-ratePercent=60
-FromSize=50
-ToSize=250
-
-[[percentrandom]]
-ratePercent=20
-FromSize=251
-ToSize=500
-
-[[percentrandom]]
-ratePercent=15
-FromSize=501
-ToSize=1000
-
-[[percentrandom]]
-ratePercent=5
-FromSize=1001
-ToSize=10000
-
