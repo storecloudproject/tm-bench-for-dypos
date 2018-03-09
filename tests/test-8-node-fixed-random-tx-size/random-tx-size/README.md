@@ -2,7 +2,7 @@
 
 **Scope of Test 4 b**
 
-The purpose of this test is to evaluate the “consensus efficiency” of Storecoin DyPoS (https://storeco.in/) engine with random ,transaction sizes on 8 nodes,  Consensus efficiency is the rate at which the participating validator nodes agree on the new block. It is measured as transactions per second processed and added to the blocks. This test doesn’t include validating the transactions, executing the transactions after they are added to the block, etc., but attempts to measure raw performance of the consensus engine.
+The purpose of this test is to evaluate the “consensus efficiency” of Storecoin DyPoS (https://storeco.in/) engine with random, transaction sizes on 8 nodes,  Consensus efficiency is the rate at which the participating validator nodes agree on the new block. It is measured as transactions per second processed and added to the blocks. This test doesn’t include validating the transactions, executing the transactions after they are added to the block, etc., but attempts to measure raw performance of the consensus engine.
  
 Storecoin DyPoS is built on top of Tendermint (https://tendermint.com/). In this test, its benchmarking tool, TM-Bench, is customized to provide the necessary setup described below.
 
@@ -14,7 +14,7 @@ Storecoin DyPoS is built on top of Tendermint (https://tendermint.com/). In this
 - 4 Connections 
 - 8 Connections
 
-Tm-bench is customized where the transaction sizes are randomly computed subjected to the maximum size. The test setup will be same as previous test , except that the nodes are increased to 8 and are two set of connections 4 and 8 respectively are used. 
+Tm-bench is customized where the transaction sizes are randomly computed subjected to the maximum size. The test setup will be same as previous test, except that the nodes are increased to 8 and are two set of connections 4 and 8 respectively are used. 
 
 Here is the breakup that we have used :
 
