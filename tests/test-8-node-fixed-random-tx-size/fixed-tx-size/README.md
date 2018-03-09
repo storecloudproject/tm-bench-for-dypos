@@ -1,4 +1,4 @@
-# Consensus Efficiency of Storecoin DyPoS -Test 4 a (8 nodes  Transaction Size distribution by Fixed method) 
+# Consensus Efficiency of Storecoin DyPoS -Test 4 a (8 nodes  Transaction Size distribution by fixed size) 
 
 **Scope of Test 4**
 
@@ -15,14 +15,14 @@ Storecoin DyPoS is built on top of Tendermint (https://tendermint.com/). In this
 
 - 8 Connections
 
-Tm-bench is customized where the transaction sizes are randomly computed subjected to the maximum size. The test setup will be same as Phase 1, except that the nodes are increased to 8 and are two set of connections 4 and 8 respectively are used. 
+Tm-bench is customized where the transaction sizes are fixed, computed subjected to the maximum size. The test setup will be same as Test 1, except that the nodes are increased to 8 and are two set of connections 4 and 8 respectively are used. 
  
- TM-Bench is customized to generate transactions of fixed size (in bytes). The number of clients (“c” = 4/”c”=8 ) is set to be same as the number of validator nodes (“N” = 8). Each client generates transactions of specified size and sends them to the configured validator node. All the 8 validator nodes receive transactions concurrently and the elected proposer node proposes the new blocks with transactions received by all the validators. The tests are run with fixed transaction sizes of 100, 500, 1K, 5K and 10K bytes for a duration (“T” = 5) of 5 seconds. The transaction rate ("r") will be 500, 1000, 2000, 5000, and 10000.
+TM-Bench is customized to generate transactions of fixed size (in bytes). The number of clients (“c” = 4/”c”=8 ) is set to be same as the number of validator nodes (“N” = 8). Each client generates transactions of specified size and sends them to the configured validator node. All the 8 validator nodes receive transactions concurrently and the elected proposer node proposes the new blocks with transactions received by all the validators. The tests are run with fixed transaction sizes of 100 bytes , 500 bytes, 1 KB, 5 KB and 10 KB  for a duration (“T” = 5) of 5 seconds. The transaction rate ("r") will be 500, 1000, 2000, 5000, and 10000.
 
 
 **Environment and Tools**
 
-A cluster containing 4 validator nodes is set up on an Amazon Web Services (AWS) Elastic Compute Cloud (EC2). Each validator node runs on r3.xlarge instance with 4 CPUs, 30.5GB memory, and 80GB SSD drive. The nodes are located in the following regions.
+A cluster containing 8 validator nodes is set up on an Amazon Web Services (AWS) Elastic Compute Cloud (EC2). Each validator node runs on r3.xlarge instance with 4 CPUs, 30.5GB memory, and 80GB SSD drive. The nodes are located in the following regions.
  
 Nodes :  r3.xlarge instances
 
@@ -37,6 +37,8 @@ Nodes :  r3.xlarge instances
 The 8 validator nodes are geographically spread across the United States and the clients are configured in a 5th region in order to simulate real world setup.
 
 **Running the Test**
+
+4 Connections: 
 
 - C1 sends r transactions of fixed size s to N1 for the duration T. 
 
@@ -54,9 +56,28 @@ The 8 validator nodes are geographically spread across the United States and the
 
 - C4 sends r transactions of fixed size s to N8 for the duration T.
 
+8 Connections: 
+
+- C1 sends r transactions of fixed size s to N1 for the duration T. 
+
+- C2 sends r transactions of fixed size s to N2 for the duration T. 
+
+- C3 sends r transactions of fixed size s to N3 for the duration T. 
+
+- C4 sends r transactions of fixed size s to N4 for the duration T.
+
+- C5 sends r transactions of fixed size s to N5 for the duration T. 
+
+- C6 sends r transactions of fixed size s to N6 for the duration T. 
+
+- C7 sends r transactions of fixed size s to N7 for the duration T. 
+
+- C8 sends r transactions of fixed size s to N8 for the duration T.
+
+
 **Test Summary**
 
-est was performed for fixed transaction  size and 5 rates were used resulting in a total of 25 tests for 4 connections and 25 test for 8 connections  Some tests, at higher rate, failed due to timeouts resulting from excessive load on the system.
+Test was performed for fixed transaction  size and 5 transaction rates were used resulting in a total of 25 tests for 4 connections and 25 test for 8 connections  Some tests, at higher rate, failed due to timeouts resulting from excessive load on the system.
 
 4 Connections : 
 
@@ -70,6 +91,7 @@ See here : https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-r
 
 
 In the following test results, “Blocks/sec” indicates the number of blocks added to the blockchain per second and “Txs/sec” indicates the consensus efficiency. “Txs/sec” is the rate at which the transactions are processed and included in the blocks.
+
 See the transaction logs for failures.
 
 4 Connections : 
@@ -117,4 +139,4 @@ See the transaction logs for details.
 
 - Test 7 (test-21-node-burst-mode-real-tx) uses real transactions which need to be validated before they are included in the block. The purpose of this test is to measure the throughput with transaction overheads included in the throughput numbers.
 
-The dates for tests 4 to 7 will be published as we make progress.
+The dates for tests 5 to 7 will be published as we make progress.
