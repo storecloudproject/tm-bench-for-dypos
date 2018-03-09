@@ -2,7 +2,7 @@
 
 **Scope of Test 4 b**
 
-The purpose of this test is to evaluate the “consensus efficiency” of Storecoin DyPoS (https://storeco.in/) engine with fixed ,transaction sizes on 8 nodes,  Consensus efficiency is the rate at which the participating validator nodes agree on the new block. It is measured as transactions per second processed and added to the blocks. This test doesn’t include validating the transactions, executing the transactions after they are added to the block, etc., but attempts to measure raw performance of the consensus engine.
+The purpose of this test is to evaluate the “consensus efficiency” of Storecoin DyPoS (https://storeco.in/) engine with random ,transaction sizes on 8 nodes,  Consensus efficiency is the rate at which the participating validator nodes agree on the new block. It is measured as transactions per second processed and added to the blocks. This test doesn’t include validating the transactions, executing the transactions after they are added to the block, etc., but attempts to measure raw performance of the consensus engine.
  
 Storecoin DyPoS is built on top of Tendermint (https://tendermint.com/). In this test, its benchmarking tool, TM-Bench, is customized to provide the necessary setup described below.
 
@@ -14,7 +14,7 @@ Storecoin DyPoS is built on top of Tendermint (https://tendermint.com/). In this
 - 4 Connections 
 - 8 Connections
 
-Tm-bench is customized where the transaction sizes are randomly computed subjected to the maximum size. The test setup will be same as Test 3, except that the nodes are increased to 8 and are two set of connections 4 and 8 respectively are used. 
+Tm-bench is customized where the transaction sizes are randomly computed subjected to the maximum size. The test setup will be same as previous test , except that the nodes are increased to 8 and are two set of connections 4 and 8 respectively are used. 
 
 Here is the breakup that we have used :
 
@@ -24,15 +24,14 @@ Here is the breakup that we have used :
 - Percentage : 5% Size 1001 Byte - 10 KB
 
  
- TM-Bench is customized to generate transactions of fixed size (in bytes). The number of clients (“c” = 4/”c”=8 ) is set to be same as the number of validator nodes (“N” = 8). Each client generates transactions of specified size and sends them to the configured validator node. All the 8 validator nodes receive transactions concurrently and the elected proposer node proposes the new blocks with transactions received by all the validators. The tests are run with fixed transaction sizes of 100, 500, 1K, 5K and 10K bytes for a duration (“T” = 5) of 5 seconds. The transaction rate ("r") will be 500, 1000, 2000, 5000, and 10000.
+ TM-Bench is customized to generate transactions of random size (in bytes). The number of clients (“c” = 4/”c”=8 ) is set to be same as the number of validator nodes (“N” = 8). Each client generates transactions of specified size and sends them to the configured validator node. All the 8 validator nodes receive transactions concurrently and the elected proposer node proposes the new blocks with transactions received by all the validators. The tests are run with random transaction sizes for a duration (“T” = 5) of 5 seconds. The transaction rate ("r") will be 500, 1000, 2000, 5000, and 10000.
  
-Tm-bench is customized where the transaction sizes are randomly computed subjected to the maximum size. The test setup will be same as Phase 1, except that the nodes are increased to 8 and tested two set of connections 4 and 8 respectively. 
- 
+
 
 
 **Environment and Tools**
 
-A cluster containing 4 validator nodes is set up on an Amazon Web Services (AWS) Elastic Compute Cloud (EC2). Each validator node runs on r3.xlarge instance with 4 CPUs, 30.5GB memory, and 80GB SSD drive. The nodes are located in the following regions.
+A cluster containing 8 validator nodes is set up on an Amazon Web Services (AWS) Elastic Compute Cloud (EC2). Each validator node runs on r3.xlarge instance with 4 CPUs, 30.5GB memory, and 80GB SSD drive. The nodes are located in the following regions.
  
 Nodes :  r3.xlarge instances
 
@@ -48,7 +47,7 @@ The 8 validator nodes are geographically spread across the United States and the
 
 **Running the Test**
 
-4 Connections 
+4 Connections : 
 
 - C1 sends r transactions of random size s to N1 for the duration T. 
 - C2 sends r transactions of random size s to N2 for the duration T. 
@@ -59,7 +58,7 @@ The 8 validator nodes are geographically spread across the United States and the
 - C3 sends r transactions of random size s to N7 for the duration T. 
 - C4 sends r transactions of random size s to N8 for the duration T.
 
-8 Connections 
+8 Connections : 
 
 - C1 sends r transactions of random size s to N1 for the duration T. 
 - C2 sends r transactions of random size s to N2 for the duration T. 
@@ -95,7 +94,7 @@ See here:
 
 **Results Summary**
 
-Consensus efficiency is directly proportional to the transaction volume. The transaction volume is (transaction size * number of transactions). At smaller transaction sizes (see the results for 500 byte transactions) tests passed for higher input transaction rates, but as the transaction sizes increases, the test failed for higher rates. The failures here result in rejected transactions. 
+Consensus efficiency is directly proportional to the transaction volume. The transaction volume is (transaction size * number of transactions). Tests passed for lower  input transaction rates, but as the transaction rates  increases, the test failed.The failures here result in rejected transactions. 
 
 The validator nodes remained stable even at failure levels above. See the transaction logs for details.
 
