@@ -11,8 +11,8 @@ Storecoin DyPoS is built on top of Tendermint (https://tendermint.com/). In this
 
  Test has been executed in 2 phases : 
 
-1: 4 Connections 
-2: 8 Connections
+- 4 Connections 
+- 8 Connections
 
 Tm-bench is customized where the transaction sizes are randomly computed subjected to the maximum size. The test setup will be same as Test 3, except that the nodes are increased to 8 and are two set of connections 4 and 8 respectively are used. 
 
