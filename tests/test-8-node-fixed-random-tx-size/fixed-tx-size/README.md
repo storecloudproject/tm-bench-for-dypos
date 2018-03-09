@@ -60,11 +60,11 @@ est was performed for fixed transaction  size and 5 rates were used resulting in
 
 4 Connections : 
 
-See here : https://github.com/StorecoinProject/tm-bench/blob/phase3/images/Summary.png
+See here : https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/4a-4-node.png
 
 8 Connections: 
 
-See here : https://github.com/StorecoinProject/tm-bench/blob/phase3/images/Summary.png
+See here : https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/4a-8-node.png
 
 **Test Results**
 
@@ -74,11 +74,31 @@ See the transaction logs for failures.
 
 4 Connections : 
 
-See here : https://github.com/StorecoinProject/tm-bench/blob/phase3/images/Summary.png
+See here :
 
-8 Connections: 
+- https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/Phase4_P1_T5_C4_N8_R500.png
 
-See here : https://github.com/StorecoinProject/tm-bench/blob/phase3/images/Summary.png
+- https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/Phase4_P1_T5_C4_N8_R1000.png
+
+- https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/Phase4_P1_T5_C4_N8_R2000.png
+
+- https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/Phase4_P1_T5_C4_N8_R5000.png
+
+- https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/Phase4_P1_T5_C4_N8_R10000.png
+
+8 Connections : 
+
+See here :
+
+- https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/Phase4_P1_T5_C8_N8_R500.png
+
+- https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/Phase4_P1_T5_C8_N8_R1000.png
+
+- https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/Phase4_P1_T5_C8_N8_R2000.png
+
+- https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/Phase4_P1_T5_C8_N8_R5000.png
+
+- https://github.com/StorecoinProject/tm-bench/blob/test-8-node-fixed-random-tx-size/tests/test-8-node-fixed-random-tx-size/fixed-tx-size/images/Phase4_P1_T5_C8_N8_R1000.png
 
 
 
