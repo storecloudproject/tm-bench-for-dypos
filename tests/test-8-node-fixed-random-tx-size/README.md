@@ -7,3 +7,5 @@ The test are run in two Parts :
 -  Test 4a - fixed-tx-size
 -  Test 4b - random-tx-size
 
+Details can be found in each test folder 
+
