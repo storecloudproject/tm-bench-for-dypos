@@ -2,7 +2,7 @@
 
 **Scope of Test 4**
 
-The purpose of this test is to evaluate the “consensus efficiency” of Storecoin DyPoS (https://storeco.in/) engine with fixed ,transaction sizes on 8 nodes,  Consensus efficiency is the rate at which the participating validator nodes agree on the new block. It is measured as transactions per second processed and added to the blocks. This test doesn’t include validating the transactions, executing the transactions after they are added to the block, etc., but attempts to measure raw performance of the consensus engine.
+The purpose of this test is to evaluate the “consensus efficiency” of Storecoin DyPoS (https://storeco.in/) engine with fixed, transaction sizes on 8 nodes,  Consensus efficiency is the rate at which the participating validator nodes agree on the new block. It is measured as transactions per second processed and added to the blocks. This test doesn’t include validating the transactions, executing the transactions after they are added to the block, etc., but attempts to measure raw performance of the consensus engine.
  
 Storecoin DyPoS is built on top of Tendermint (https://tendermint.com/). In this test, its benchmarking tool, TM-Bench, is customized to provide the necessary setup described below.
 
@@ -17,7 +17,7 @@ Storecoin DyPoS is built on top of Tendermint (https://tendermint.com/). In this
 
 Tm-bench is customized where the transaction sizes are fixed, computed subjected to the maximum size. The test setup will be same as Test 1, except that the nodes are increased to 8 and are two set of connections 4 and 8 respectively are used. 
  
-TM-Bench is customized to generate transactions of fixed size (in bytes). The number of clients (“c” = 4/”c”=8 ) is set to be same as the number of validator nodes (“N” = 8). Each client generates transactions of specified size and sends them to the configured validator node. All the 8 validator nodes receive transactions concurrently and the elected proposer node proposes the new blocks with transactions received by all the validators. The tests are run with fixed transaction sizes of 100 bytes , 500 bytes, 1 KB, 5 KB and 10 KB  for a duration (“T” = 5) of 5 seconds. The transaction rate ("r") will be 500, 1000, 2000, 5000, and 10000.
+TM-Bench is customized to generate transactions of fixed size (in bytes). The number of clients (“c” = 4/”c”=8 ) is set to be same as the number of validator nodes (“N” = 8). Each client generates transactions of specified size and sends them to the configured validator node. All the 8 validator nodes receive transactions concurrently and the elected proposer node proposes the new blocks with transactions received by all the validators. The tests are run with fixed transaction sizes of 100 bytes, 500 bytes, 1 KB, 5 KB and 10 KB  for a duration (“T” = 5) of 5 seconds. The transaction rate ("r") will be 500, 1000, 2000, 5000, and 10000.
 
 
 **Environment and Tools**
