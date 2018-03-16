@@ -114,12 +114,11 @@ This observation is recorded for the configuration used in the example above.
   </tr>
 </table>
 
+**Block Latency:** This is the time taken by the validator to create a new block with transactions included in them. The block latency is determined by the transaction rate and size. The lower the block latency, the higher the consensus efficiency.
 
-**Block Latency: ** This is the time taken by the validator to create a new block with transactions included in them. The block latency is determined by the transaction rate and size. The lower the block latency, the higher the consensus efficiency.
+**Block/sec:** This is the number of blocks created per second. The higher the number of blocks produced per second, the higher the consensus efficiency.
 
-**Block/sec: ** This is the number of blocks created per second. The higher the number of blocks produced per second, the higher the consensus efficiency.
-
-**Txs/sec: ** This is the consensus efficiency measured as the number of transactions processed per second. We use the terms, consensus efficiency, efficiency, throughput, performance, etc. interchanbeably to mean the same thing.
+**Txs/sec:** This is the consensus efficiency measured as the number of transactions processed per second. We use the terms, consensus efficiency, efficiency, throughput, performance, etc. interchanbeably to mean the same thing.
 
 We use Tendermint’s [tm-bench](https://github.com/tendermint/tools/tree/master/tm-bench) to generate transactions. Each test modifies the tm-bench code and configuration to suit the requirements of the tests.
 
